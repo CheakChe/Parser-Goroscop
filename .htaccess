@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteCond %{REQUEST_FILENAME}\.php !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^\/app/public/css/(.*).css
+    RewriteCond %{REQUEST_URI} !^\/app/public/img/(.*).png
+    RewriteCond %{REQUEST_URI} !^\/app/public/img/(.*).jpg
+    RewriteCond %{REQUEST_URI} !^\/app/public/img/svg/(.*).svg
+    RewriteCond %{REQUEST_URI} !^\/app/public/js/(.*).js
+    RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
