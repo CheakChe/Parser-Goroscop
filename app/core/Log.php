@@ -3,8 +3,8 @@
 
 class Log
 {
-    static function writeLog($text)
+    public static function writeLog(string $text): void
     {
-        fwrite(fopen('log.txt', 'a'), PHP_EOL . date('Y.m.d H:i:s') . " $text " . PHP_EOL);
+        fwrite(fopen('log.txt', 'ab'), PHP_EOL . date('Y.m.d H:i:s') . " $text " . PHP_EOL);
     }
 }

@@ -19,7 +19,7 @@ class Router
         }
     }
 
-    public function init()
+    public function init(): void
     {
         $vars[] = (new Controller())->init();
 
@@ -34,7 +34,7 @@ class Router
         $this->view($vars);
     }
 
-    private function view($vars)
+    private function view($vars): void
     {
         $vars = $this->var($vars);
         include_once 'app/public/index.php';

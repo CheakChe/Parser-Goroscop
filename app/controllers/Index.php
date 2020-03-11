@@ -66,7 +66,8 @@ class Index extends AbstractController
                 'content' => $data
             )
         );
-        $goroscop = file_get_contents('http://moygoroskop.com/telets', false, stream_context_create($context_options));
+        $goroscop = file_get_contents('http://moygoroskop.com/', false, stream_context_create($context_options));
         return json_decode($goroscop, true);
     }
+
 }
